@@ -10,7 +10,7 @@ $name = Auth::check() ? Auth::user()->name : '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" href="img/uni_gray_xs.png">
-    <title>UNI EARPFIM</title>
+    <title>@yield('tituloPag')</title>
     <link rel="stylesheet" href="css/boostrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome/fontawesome.min.css">
@@ -18,6 +18,8 @@ $name = Auth::check() ? Auth::user()->name : '';
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/tablaAsistencia.css">
+    <link href="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.3.122/web/pdf_viewer.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap4.min.css" rel="stylesheet" > -->
 </head>
 <body>
     
@@ -33,8 +35,8 @@ $name = Auth::check() ? Auth::user()->name : '';
     <script src="js/menu.js"></script>
 
     <div class="before-page" id="before-page">
-      <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-        <span class="visually-hidden"></span>
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only"></span>
       </div>
     </div>
     <div class="wrapper">
@@ -69,7 +71,7 @@ $name = Auth::check() ? Auth::user()->name : '';
                     <button type="button" id="sidebarCollapse" class="btn text-light">
                     <i class="fa fa-bars"></i>
                     </button>
-                    <span style="overflow:hidden;width:90%;white-space:nowrap;text-overflow:ellipsis"><?php echo $name ?></span>
+                    <span style="overflow:hidden;width:auto;white-space:nowrap;text-overflow:ellipsis"><?php echo $name ?></span>
                     <li class="nav-item dropdown menu-rol">
                         <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">
                         <i class="fas fa-ellipsis-v"></i>
@@ -108,6 +110,8 @@ $name = Auth::check() ? Auth::user()->name : '';
         }
         window.addEventListener('storage', storageChange, false)
    </script>
+   <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.3.122/build/pdf.min.js"></script>
+   <!-- <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script> -->
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('nombreusuario','Usuario 1')
+@section('tituloPag','UNI | EARPFIM')
 @section('contenido')
 <div class="container">
   <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">

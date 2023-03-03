@@ -16,7 +16,7 @@ use App\Http\Controllers\loginController;
 
 Route::view('/', 'login')->middleware('guest')->name('/');
 Route::view('/home', 'home')->middleware('auth')->name('home');
-Route::view('/practicante', 'asistencia.asistencia')->middleware('auth')->name('asistencia.asistencia');
+Route::view('/practicante', 'practicante.asistencia')->middleware('auth')->name('practicante.asistencia');
 
 
 Route::post('/iniciar-sesion', [LoginController::class,'login'])->name('iniciar-sesion');

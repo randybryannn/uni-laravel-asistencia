@@ -13,7 +13,7 @@ export const cargador__ = 'before-page';
 export const fetch_ = (_url, _type) => {
     return fetch(_url, {
         method: _type,
-        headers:{ 'Content-Type': 'application/json' }
+        headers:{ 'Content-Type': 'application/json;charset=UTF-8' }
     }).then(res => res.json())
     .then(response => response);
 };
@@ -25,7 +25,16 @@ export const fetch__ = (_url,_type,_data) => {
     }).then(res => res.json())
     .then(response => response);
 };
-
+export const fetch___ = (_url,_type,_data) => {
+    return fetch(_url, {
+        method: _type,
+        body: _data,
+        headers:{ 
+            //'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        }
+    }).then(res => res.json())
+    .then(response => response);
+};
 export const mostrarPopUp = (_type, _data) => {
      const Toast = Swal.mixin({
         toast: true,
@@ -39,15 +48,30 @@ export const mostrarPopUp = (_type, _data) => {
         }
     })
 
-    if(_type == 0){
+    if(_type == "entrada"){
+        // 'Entrada marcada', 'Todavia no puede marcar su entrada', 'Ya ha marcado entrada'
         return Toast.fire({
             icon: _data['result'][0] == 'Entrada marcada' ? 'success' : 'info',
-            title: _data['result'][0] == 'Entrada marcada' ? 'A estudiar!!' : 'Todavia no puedo marcar su entrada...',
+            title: _data['result'][0],
         })
-    }else{
+    }
+    else if(_type == "salida"){
+        // 'Salida marcada', 'Ya no puede marcar su salida', 'Todavia no puede marcar su salida', 'Ya ha marcado salida',
         return Toast.fire({
             icon: _data['result'][0] == 'Salida marcada' ? 'success' : 'warning',
-            title: _data['result'][0] == 'Salida marcada' ? 'Hasta pronto!!' : 'Todavia no puedo marcar su salida...',
+            title: _data['result'][0],
+        })
+    }
+    else if(_type == "datosJustif"){
+        return Toast.fire({
+            icon: 'warning',
+            title: _data,
+        })
+    }
+    else if(_type == "confirmJustif"){
+        return Toast.fire({
+            icon: 'success',
+            title: _data,
         })
     }
 };

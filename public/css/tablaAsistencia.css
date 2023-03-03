@@ -1,10 +1,29 @@
 #tabla-asistencia_wrapper{
-    display: flex;  
+    /* display: flex;  
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
 }
 #tabla-asistencia_paginate{
-    margin: 0 auto; /* requerido para alineación horizontal */
-    display: block;
+    /* margin: 0 auto;
+    display: block; */
 }
-#tabla-asistencia th {text-align: center;}
+#tabla-asistencia_paginate{
+    display: flex;  
+    /* flex-direction: column;
+    align-items: center; */
+    justify-content: center;
+    /* position: relative; */
+    box-sizing: initial;
+}
+
+/* #tabla-asistencia th {text-align: center;} */
+
+.ctdFilasTabla{
+    /* justify-content: center;
+    align-items: center;
+    display: flex; */
+}
+
+.ctdFilasTabla span{
+    /* padding-right: 5px; */
+}

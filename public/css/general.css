@@ -10,3 +10,12 @@
     z-index: 2;
     background: rgba(249, 249, 249, 0.705);
 }
+
+.modal-open{
+    overflow:auto!important;
+    padding-right:0 !important;
+}
+
+a[data-dt-idx="0"] {
+    background-color: #1954de !important;
+}
